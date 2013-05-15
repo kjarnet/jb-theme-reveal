@@ -23,7 +23,7 @@
 
     <!-- If the query includes 'print-pdf', use the PDF print sheet -->
     <script>
-	    document.write( '<link rel="stylesheet" href="{{ ASSET_PATH }}/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+      document.write( '<link rel="stylesheet" href="{{ ASSET_PATH }}/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
     </script>
 
     
@@ -71,6 +71,7 @@
                 { src: '{{ ASSET_PATH }}/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
                 { src: '{{ ASSET_PATH }}/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
                 { src: '{{ ASSET_PATH }}/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+                // { src: '{{ ASSET_PATH }}/plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
                 // { src: '{{ ASSET_PATH }}/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
             ]
         });
