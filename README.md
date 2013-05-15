@@ -22,6 +22,26 @@ see the README.md in
 
 See it in action on http://kjarnet.no/jb-theme-reveal/.
 
+Installation
+------------
+The theme is packaged to be installed with
+JekyllBootstrap's rake script.
+See instructions on 
+[the JekyllBootstrap page](http://jekyllbootstrap.com/usage/jekyll-theming.html#install_themes).
+The url to the git-repo is https://github.com/kjarnet/jb-theme-reveal.git
+Alternatively, if you don't have ruby/rake,
+just merge the _includes and assets folders
+into the ones on your JekyllBootstrap site.
+
+**NB**: 
+Appearently, github's default markdown parser
+doesn't parse markdown between `<section>` tags,
+so you have to use redcarpet instead:
+In your _config.yml file,
+add a line "`markdown: redcarpet`"
+somewhere at the top (at the root level).
+
+
 Use as main theme
 -----------------
 
@@ -35,14 +55,16 @@ like so:
 
     ---
     layout: page
+    title: Header Title
+    description: Description for meta tag
     ---
     <section>
-      # Title-Slide header #
-      Title-Slide sub-title
+    # Title-Slide header #
+    Title-Slide sub-title
     </section>
     <section>
-      ## Slide 2 header ##
-      Slide 2 content
+    ## Slide 2 header ##
+    Slide 2 content
     </section>
     ...
 
@@ -61,10 +83,11 @@ that you'd like a slideshow
 as a sub-page of your site
 along with normal jekyll-pages
 that use another theme.
-This can be accomplished by
-using a normal theme for your site in general, e.g.
-`rake theme:switch name="twitter"`
-and then add a custom layout
+To accoplish this,
+use a normal theme for your site in general
+(you can switch to a normal theme with e.g.
+`rake theme:switch name="twitter"`).
+Then add a custom layout
 by adding something like
 these two pages in the \_layouts folder:
 
@@ -92,14 +115,16 @@ would then be something like this instead:
 
     ---
     layout: presentation
+    title: Header Title
+    description: Description for meta tag
     ---
     <section>
-      # Title-Slide header #
-      Title-Slide sub-title
+    # Title-Slide header #
+    Title-Slide sub-title
     </section>
     <section>
-      ## Slide 2 header ##
-      Slide 2 content
+    ## Slide 2 header ##
+    Slide 2 content
     </section>
     ...
 
